@@ -30,7 +30,7 @@ reg [9:0] rx_counter;
 always @ (posedge clk)
 begin
     if(tx_counter == 5208) tx_counter = 0;
-    else tx_counter = tx_counter + 1;
+    else tx_counter <= tx_counter + 1;
 end
 
 always @ (posedge clk)
