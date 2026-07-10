@@ -21,21 +21,37 @@
 
 
 module baud_rate_gen(
-input clk ,
+input clk , rst,
 output tx_enable , rx_enable
     );
-reg [12:0] tx_counter ;
-reg [9:0] rx_counter;
+reg [15:0] tx_counter;
+reg [15:0] rx_counter;
 
-always @ (posedge clk)
+parameter clk_freq = 100000000; // SYSTEM CLOCK FREQUENCY
+parameter baud_rate = 9600; //REQUIRED BAUD RATE
+parameter divisor_tx = clk_freq/baud_rate; //PRESCALAR OF SENDER
+parameter divisor_rx = clk_freq/(16 *baud_rate);    //PRESCALAR OF RECIEVER
+
+
+always @(posedge clk)
 begin
-    if(tx_counter == 5208) tx_counter = 0;
+    if(rst)begin
+        tx_counter <= 0;
+    end
+//end
+
+//always @ (posedge clk)
+//begin
+    else if(tx_counter == divisor_tx - 1) tx_counter = 0;
     else tx_counter <= tx_counter + 1;
 end
 
 always @ (posedge clk)
 begin
-    if(rx_counter == 325) rx_counter <= 0;
+        if(rst)begin
+        rx_counter <= 0;
+    end
+    else if(rx_counter == divisor_rx - 1) rx_counter <= 0;
     else rx_counter <= rx_counter + 1;
 end
 

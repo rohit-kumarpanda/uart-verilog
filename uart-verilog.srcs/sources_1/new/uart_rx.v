@@ -49,7 +49,7 @@ begin
     if(clk_en) begin
         case(state)
             start_state: begin
-                if(rx==0 && sample!= 0)
+                if(!rx || sample!= 0)
                     sample <= sample + 1'b1;
                 if(sample == 15) begin
                     state <= dataout_state;
@@ -65,7 +65,7 @@ begin
                     temp_reg[bit_pos] <= rx;
                     bit_pos <= bit_pos + 1'b1;
                end
-               if(sample == 15 && bit_pos == 7)
+               if(sample == 15 && bit_pos == 8)
                     state <= stop_state;
            end
            
@@ -76,7 +76,7 @@ begin
                     ready <= 1'b1;
                     sample <= 0;
                 end
-                else sample <= sample + 1'b1;
+                else sample <= sample + 4'b1;
            end
            
            default: begin

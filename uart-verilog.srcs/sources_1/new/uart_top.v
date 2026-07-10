@@ -33,7 +33,7 @@ wire rx_clk_en;
 wire tx_clk_en;
 wire tx_temp;
 
-baud_rate_gen bg(clk ,tx_clk_en , rx_clk_en);
+baud_rate_gen bg(clk ,rst, tx_clk_en , rx_clk_en);
 uart_tx tx(clk , wr_en , rst , tx_clk_en , data_in ,tx_temp , busy);
 uart_rx rx(clk , rst , rdy_clr , rx_clk_en , tx_temp ,ready , data_out );
 endmodule

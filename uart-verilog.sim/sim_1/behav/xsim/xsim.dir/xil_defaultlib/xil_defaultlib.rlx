@@ -1,0 +1,10 @@
+0.6
+2018.3
+Dec  7 2018
+00:33:28
+C:/Users/rohit/VERILOG codes/uart-verilog/uart-verilog.sim/sim_1/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,
+C:/Users/rohit/VERILOG codes/uart-verilog/uart-verilog.srcs/sim_1/new/uart_tb.v,1783702566,verilog,,,,uart_tb,,,,,,,,
+C:/Users/rohit/VERILOG codes/uart-verilog/uart-verilog.srcs/sources_1/new/baud_rate_gen.v,1783696671,verilog,,C:/Users/rohit/VERILOG codes/uart-verilog/uart-verilog.srcs/sources_1/new/uart_rx.v,,baud_rate_gen,,,,,,,,
+C:/Users/rohit/VERILOG codes/uart-verilog/uart-verilog.srcs/sources_1/new/uart_rx.v,1783685220,verilog,,C:/Users/rohit/VERILOG codes/uart-verilog/uart-verilog.srcs/sources_1/new/uart_top.v,,uart_rx,,,,,,,,
+C:/Users/rohit/VERILOG codes/uart-verilog/uart-verilog.srcs/sources_1/new/uart_top.v,1783687051,verilog,,C:/Users/rohit/VERILOG codes/uart-verilog/uart-verilog.srcs/sources_1/new/uart_tx.v,,uart_top,,,,,,,,
+C:/Users/rohit/VERILOG codes/uart-verilog/uart-verilog.srcs/sources_1/new/uart_tx.v,1783613942,verilog,,C:/Users/rohit/VERILOG codes/uart-verilog/uart-verilog.srcs/sim_1/new/uart_tb.v,,uart_tx,,,,,,,,
